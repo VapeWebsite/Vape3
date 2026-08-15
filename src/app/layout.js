@@ -1,0 +1,125 @@
+import "./globals.css";
+import Link from 'next/link';
+import Header from './Header';
+import { CartProvider } from './CartContext';
+
+export const metadata = {
+  title: "Vape Shop Mumbai | Buy Disposable Vapes, Elf Bar & Nic Salts Online",
+  description: "Buy premium disposable vapes, pod kits, nic salts, e-liquids, and vape accessories from Vape Shop Mumbai. Shop top brands like Elf Bar, IGET, Nasty and Terra with fast delivery across Mumbai. Order online today.",
+  keywords: "vape shop mumbai, disposable vapes mumbai, elf bar mumbai, iget vape mumbai, nic salts mumbai, buy vapes online mumbai",
+  icons: {
+    icon: "/assets/img_1.jpg",
+    shortcut: "/assets/img_1.jpg",
+    apple: "/assets/img_1.jpg",
+  },
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        <CartProvider>
+          <div className="top-bar">
+            <a href="https://wa.me/919394309383" target="_blank" rel="noreferrer" className="top-bar-link">
+              <span className="pulse-dot"></span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style={{ marginRight: '6px' }}>
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+              </svg>
+              <span>Order Only on WhatsApp - <strong>+91 93943 09383</strong></span>
+            </a>
+          </div>
+
+          <Header />
+
+          {children}
+
+          <footer className="footer">
+            <div className="container footer-grid">
+              <div className="footer-col brand-col">
+                <div className="footer-brand-title">
+                  <img src="/assets/img_1.jpg" alt="Vape Shop Mumbai Logo" className="footer-brand-logo" />
+                  <span>VAPE SHOP MUMBAI</span>
+                </div>
+                <p className="footer-brand-desc">
+                  #1 trusted online vape store in Mumbai. Premium disposable vapes, pod systems & nic salts with same-day express delivery.
+                </p>
+                <div className="footer-contact-info">
+                  <p className="footer-info-row">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Mumbai, Maharashtra, India</span>
+                  </p>
+                  <a href="mailto:d69344667@gmail.com" className="footer-info-row">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                    <span>d69344667@gmail.com</span>
+                  </a>
+                  <a href="https://wa.me/919394309383" target="_blank" rel="noreferrer" className="footer-info-row footer-wa-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                    </svg>
+                    <span>+91 93943 09383 (Order on WhatsApp)</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className="footer-col">
+                <h4>Quick Links</h4>
+                <Link href="/">Home</Link>
+                <Link href="/shop">Shop All Vapes</Link>
+                <Link href="/shop?category=ELF+BAR+VAPE">Elf Bar Vapes</Link>
+                <Link href="/shop?category=IGET+VAPE">IGET Vapes</Link>
+                <Link href="/shop?category=NIC+SALTS+VAPE">Nic Salts</Link>
+                <Link href="/shop?category=TERRA">Terra Vapes</Link>
+              </div>
+
+              <div className="footer-col">
+                <h4>Customer Support</h4>
+                <a href="https://wa.me/919394309383" target="_blank" rel="noreferrer">WhatsApp 24/7 Support</a>
+                <Link href="#">Shipping & Delivery Policy</Link>
+                <Link href="#">Refund & Return Policy</Link>
+                <Link href="#">Terms & Conditions</Link>
+                <Link href="#">Privacy Policy</Link>
+              </div>
+            </div>
+
+            <div className="footer-bottom container">
+              <p>&copy; {new Date().getFullYear()} Vape Shop Mumbai. All rights reserved.</p>
+              <div className="footer-badges">
+                <span className="badge-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                  Express Delivery
+                </span>
+                <span className="badge-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                    <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                    <circle cx="12" cy="12" r="2"></circle>
+                  </svg>
+                  Cash On Delivery
+                </span>
+                <span className="badge-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                  100% Authentic
+                </span>
+              </div>
+            </div>
+          </footer>
+
+        <a href="https://wa.me/919394309383" className="whatsapp-float" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+          </svg>
+        </a>
+        </CartProvider>
+      </body>
+    </html>
+  );
+}
