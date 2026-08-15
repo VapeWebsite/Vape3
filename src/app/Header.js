@@ -1,25 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { products } from '../data/products';
 import { useCart } from './CartContext';
 
-export default function Header() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const router = useRouter();
+function NavigationLinks({ handleNavLinkClick }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentCategory = searchParams ? searchParams.get('category') : null;
-
-  const { cart, removeFromCart, updateQuantity, clearCart, totalCount, isCartOpen, setIsCartOpen } = useCart();
-
-  const handleNavLinkClick = () => {
-    setIsNavOpen(false);
-  };
 
   const isLinkActive = (href, categoryParam) => {
     if (categoryParam) {
@@ -29,6 +19,31 @@ export default function Header() {
       return pathname === '/shop' && !currentCategory;
     }
     return pathname === href;
+  };
+
+  return (
+    <nav className="nav-links">
+      <Link href="/" className={isLinkActive('/', null) ? 'active' : ''} onClick={handleNavLinkClick}>HOME</Link>
+      <Link href="/shop" className={isLinkActive('/shop', null) ? 'active' : ''} onClick={handleNavLinkClick}>SHOP ALL</Link>
+      <Link href="/shop?category=ELF+BAR+VAPE" className={isLinkActive('/shop', 'ELF BAR VAPE') ? 'active' : ''} onClick={handleNavLinkClick}>ELF BAR</Link>
+      <Link href="/shop?category=IGET+VAPE" className={isLinkActive('/shop', 'IGET VAPE') ? 'active' : ''} onClick={handleNavLinkClick}>IGET VAPE</Link>
+      <Link href="/shop?category=NIC+SALTS+VAPE" className={isLinkActive('/shop', 'NIC SALTS VAPE') ? 'active' : ''} onClick={handleNavLinkClick}>NIC SALTS</Link>
+      <Link href="/shop?category=TERRA" className={isLinkActive('/shop', 'TERRA') ? 'active' : ''} onClick={handleNavLinkClick}>TERRA</Link>
+      <Link href="#" className={isLinkActive('#', null) ? 'active' : ''} onClick={handleNavLinkClick}>ABOUT US</Link>
+    </nav>
+  );
+}
+
+export default function Header() {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
+
+  const { cart, removeFromCart, updateQuantity, clearCart, totalCount, isCartOpen, setIsCartOpen } = useCart();
+
+  const handleNavLinkClick = () => {
+    setIsNavOpen(false);
   };
 
   const searchResults = searchQuery.trim() === '' 
@@ -77,15 +92,9 @@ export default function Header() {
             </Link>
           </div>
           
-          <nav className="nav-links">
-            <Link href="/" className={isLinkActive('/', null) ? 'active' : ''} onClick={handleNavLinkClick}>HOME</Link>
-            <Link href="/shop" className={isLinkActive('/shop', null) ? 'active' : ''} onClick={handleNavLinkClick}>SHOP ALL</Link>
-            <Link href="/shop?category=ELF+BAR+VAPE" className={isLinkActive('/shop', 'ELF BAR VAPE') ? 'active' : ''} onClick={handleNavLinkClick}>ELF BAR</Link>
-            <Link href="/shop?category=IGET+VAPE" className={isLinkActive('/shop', 'IGET VAPE') ? 'active' : ''} onClick={handleNavLinkClick}>IGET VAPE</Link>
-            <Link href="/shop?category=NIC+SALTS+VAPE" className={isLinkActive('/shop', 'NIC SALTS VAPE') ? 'active' : ''} onClick={handleNavLinkClick}>NIC SALTS</Link>
-            <Link href="/shop?category=TERRA" className={isLinkActive('/shop', 'TERRA') ? 'active' : ''} onClick={handleNavLinkClick}>TERRA</Link>
-            <Link href="#" className={isLinkActive('#', null) ? 'active' : ''} onClick={handleNavLinkClick}>ABOUT US</Link>
-          </nav>
+          <Suspense fallback={<nav className="nav-links"></nav>}>
+            <NavigationLinks handleNavLinkClick={handleNavLinkClick} />
+          </Suspense>
 
           <div className="header-icons">
             <button aria-label="Search" onClick={() => setIsSearchOpen(true)} className="search-trigger-btn">
