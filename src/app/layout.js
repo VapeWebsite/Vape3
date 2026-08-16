@@ -4,19 +4,121 @@ import Header from './Header';
 import { CartProvider } from './CartContext';
 
 export const metadata = {
-  title: "Vape Shop Mumbai | Buy Disposable Vapes, Elf Bar & Nic Salts Online",
-  description: "Buy premium disposable vapes, pod kits, nic salts, e-liquids, and vape accessories from Vape Shop Mumbai. Shop top brands like Elf Bar, IGET, Nasty and Terra with fast delivery across Mumbai. Order online today.",
-  keywords: "vape shop mumbai, disposable vapes mumbai, elf bar mumbai, iget vape mumbai, nic salts mumbai, buy vapes online mumbai",
+  title: {
+    default: "Vape Shop Gurugram | #1 Store for Premium Disposable Vapes & Pods Gurgaon",
+    template: "%s | Vape Shop Gurugram"
+  },
+  description: "Buy 100% authentic disposable vapes, Elf Bar, IGET, Terra, nic salts & e-liquids in Gurugram (Gurgaon). Express same-day delivery with cash on delivery & 24/7 WhatsApp support.",
+  keywords: [
+    "vape shop gurugram",
+    "vape shop gurgaon",
+    "buy vapes online gurugram",
+    "disposable vapes gurugram",
+    "elf bar gurugram",
+    "iget vape gurgaon",
+    "nic salts gurugram",
+    "vape delivery gurugram",
+    "vape store dlf gurgaon",
+    "same day vape delivery gurugram"
+  ],
+  authors: [{ name: "Vape Shop Gurugram" }],
+  creator: "Vape Shop Gurugram",
+  publisher: "Vape Shop Gurugram",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "Vape Shop Gurugram",
+    title: "Vape Shop Gurugram | #1 Store for Premium Disposable Vapes & Pods Gurgaon",
+    description: "Buy 100% authentic disposable vapes, Elf Bar, IGET, Terra & nic salts in Gurugram (Gurgaon). Same-day express delivery & cash on delivery available.",
+    images: [
+      {
+        url: "/assets/img_1.jpg",
+        width: 800,
+        height: 600,
+        alt: "Vape Shop Gurugram Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vape Shop Gurugram | Premium Vapes & Express Delivery Gurgaon",
+    description: "Buy 100% authentic disposable vapes, Elf Bar, IGET, Terra & nic salts in Gurugram (Gurgaon). Same-day express delivery.",
+    images: ["/assets/img_1.jpg"],
+  },
   icons: {
     icon: "/assets/img_1.jpg",
     shortcut: "/assets/img_1.jpg",
     apple: "/assets/img_1.jpg",
   },
+  other: {
+    "geo.region": "IN-HR",
+    "geo.placename": "Gurugram, Haryana, India",
+    "geo.position": "28.4595;77.0266",
+    "ICBM": "28.4595, 77.0266"
+  }
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Vape Shop Gurugram",
+    "image": "https://vapeshopgurugram.in/assets/img_1.jpg",
+    "@id": "https://vapeshopgurugram.in",
+    "url": "https://vapeshopgurugram.in",
+    "telephone": "+919394309383",
+    "priceRange": "₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "DLF Cyber City & Golf Course Road",
+      "addressLocality": "Gurugram",
+      "addressRegion": "Haryana",
+      "postalCode": "122002",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 28.4595,
+      "longitude": 77.0266
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "sameAs": [
+      "https://wa.me/919394309383"
+    ]
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <CartProvider>
           <div className="top-bar">
@@ -37,11 +139,11 @@ export default function RootLayout({ children }) {
             <div className="container footer-grid">
               <div className="footer-col brand-col">
                 <div className="footer-brand-title">
-                  <img src="/assets/img_1.jpg" alt="Vape Shop Mumbai Logo" className="footer-brand-logo" />
-                  <span>VAPE SHOP MUMBAI</span>
+                  <img src="/assets/img_1.jpg" alt="Vape Shop Gurugram Logo" className="footer-brand-logo" />
+                  <span>VAPE SHOP GURUGRAM</span>
                 </div>
                 <p className="footer-brand-desc">
-                  #1 trusted online vape store in Mumbai. Premium disposable vapes, pod systems & nic salts with same-day express delivery.
+                  #1 trusted online vape store in Gurugram (Gurgaon). Premium disposable vapes, pod systems & nic salts with fast express delivery.
                 </p>
                 <div className="footer-contact-info">
                   <p className="footer-info-row">
@@ -49,7 +151,7 @@ export default function RootLayout({ children }) {
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                       <circle cx="12" cy="10" r="3"></circle>
                     </svg>
-                    <span>Mumbai, Maharashtra, India</span>
+                    <span>Gurugram, Haryana, India</span>
                   </p>
                   <a href="mailto:d69344667@gmail.com" className="footer-info-row">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -70,6 +172,7 @@ export default function RootLayout({ children }) {
               <div className="footer-col">
                 <h4>Quick Links</h4>
                 <Link href="/">Home</Link>
+                <Link href="/about">About Us</Link>
                 <Link href="/shop">Shop All Vapes</Link>
                 <Link href="/shop?category=ELF+BAR+VAPE">Elf Bar Vapes</Link>
                 <Link href="/shop?category=IGET+VAPE">IGET Vapes</Link>
@@ -88,7 +191,7 @@ export default function RootLayout({ children }) {
             </div>
 
             <div className="footer-bottom container">
-              <p>&copy; {new Date().getFullYear()} Vape Shop Mumbai. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Vape Shop Gurugram. All rights reserved.</p>
               <div className="footer-badges">
                 <span className="badge-item">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">

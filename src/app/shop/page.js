@@ -7,14 +7,14 @@ export async function generateMetadata({ searchParams }) {
   
   if (category) {
     return {
-      title: `${category} in Mumbai | Buy Online | Vape Shop Mumbai`,
-      description: `Buy premium ${category} vapes and accessories in Mumbai. Fast delivery, 100% authentic products. Order now on Vape Shop Mumbai.`,
+      title: `${category} in Gurugram | Buy Online | Vape Shop Gurugram`,
+      description: `Buy premium ${category} vapes and accessories in Gurugram (Gurgaon). Fast delivery, 100% authentic products. Order now on Vape Shop Gurugram.`,
     };
   }
   
   return {
-    title: "Shop All Vapes in Mumbai | Disposable Vapes & Pods | Vape Shop Mumbai",
-    description: "Browse our complete collection of disposable vapes, pod systems, and nic salts in Mumbai. Shop top brands like Elf Bar, IGET, and Nasty with fast delivery.",
+    title: "Shop All Vapes in Gurugram | Disposable Vapes & Pods | Vape Shop Gurugram",
+    description: "Browse our complete collection of disposable vapes, pod systems, and nic salts in Gurugram (Gurgaon). Shop top brands like Elf Bar, IGET, and Nasty with fast delivery.",
   };
 }
 
@@ -52,7 +52,7 @@ export default async function ShopPage({ searchParams }) {
             {searchQuery ? `Search: "${searchQuery}"` : activeCategory ? activeCategory : "All Products"}
           </h1>
           <p className="shop-subtitle">
-            Browse premium authentic vapes, pod kits, and nic salts with same-day Mumbai delivery.
+            Browse premium authentic vapes, pod kits, and nic salts with fast Gurugram express delivery.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ export default async function ShopPage({ searchParams }) {
                   </Link>
                   <div style={{ padding: '0 15px 15px' }}>
                     <a 
-                      href={`https://wa.me/919394309383?text=${encodeURIComponent(`*NEW ORDER - Vape Shop Mumbai*\n----------------------------------------\n*Product:* ${product.title}\n*Price:* ${product.price}\n----------------------------------------\n\nPlease confirm availability and delivery details. Thank you!`)}`} 
+                      href={`https://wa.me/919394309383?text=${encodeURIComponent(`*NEW ORDER - Vape Shop Gurugram*\n----------------------------------------\n*Product:* ${product.title}\n*Price:* ${product.price}\n----------------------------------------\n\nPlease confirm availability and delivery details. Thank you!`)}`} 
                       target="_blank" 
                       rel="noreferrer" 
                       className="whatsapp-buy-btn"

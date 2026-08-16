@@ -1,7 +1,7 @@
 import { products } from '../data/products';
 
 export default function sitemap() {
-  const baseUrl = 'https://vapeshopmumbai.in'; // Replace with actual domain when live
+  const baseUrl = 'https://vapeshopgurugram.in'; // Replace with actual domain when live
 
   // Base routes
   const routes = [

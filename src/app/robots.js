@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://vapeshopmumbai.in/sitemap.xml',
+    sitemap: 'https://vapeshopgurugram.in/sitemap.xml',
   };
 }

@@ -9,7 +9,7 @@ export async function generateMetadata({ params }) {
   
   if (!product) {
     return {
-      title: "Product Not Found | Vape Shop Mumbai",
+      title: "Product Not Found | Vape Shop Gurugram",
     };
   }
   
@@ -17,16 +17,24 @@ export async function generateMetadata({ params }) {
   // If the product doesn't have a specific description, use a generic one
   const cleanDescription = product.description 
     ? product.description.substring(0, 150) + "..."
-    : `Buy ${product.title} online in Mumbai. Fast delivery, premium quality, and 100% authentic products. Order now on Vape Shop Mumbai.`;
+    : `Buy ${product.title} online in Gurugram (Gurgaon). Fast delivery, premium quality, and 100% authentic products. Order now on Vape Shop Gurugram.`;
 
   return {
-    title: `${product.title} | Buy Online in Mumbai | Vape Shop Mumbai`,
+    title: `${product.title} | Buy Online in Gurugram`,
     description: cleanDescription,
+    keywords: `${product.title}, buy ${product.title} gurugram, ${product.category} gurugram, vape shop gurugram`,
     openGraph: {
-      title: `${product.title} | Vape Shop Mumbai`,
+      title: `${product.title} | Vape Shop Gurugram`,
+      description: cleanDescription,
+      url: `https://vapeshopgurugram.in/product/${product.slug}`,
+      images: [{ url: product.image, alt: product.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.title} | Vape Shop Gurugram`,
       description: cleanDescription,
       images: [product.image],
-    },
+    }
   };
 }
 
@@ -38,11 +46,37 @@ export default async function ProductPage({ params }) {
     notFound();
   }
 
+  const productJsonLd = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": product.title,
+    "image": product.image.startsWith('/') ? product.image : '/' + product.image,
+    "description": product.description || `Buy ${product.title} in Gurugram (Gurgaon). Fast delivery, 100% authentic products.`,
+    "brand": {
+      "@type": "Brand",
+      "name": product.category ? product.category.replace(" VAPE", "") : "Vape"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "INR",
+      "price": product.price ? product.price.replace(/[^0-9]/g, '') : "1500",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Vape Shop Gurugram"
+      }
+    }
+  };
+
   // Get 2 random recommendations from the same category or all products
   const recommendations = products.filter(p => p.slug !== slug).slice(0, 2);
 
   return (
     <main className="product-page-main">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       <div className="container product-page-container">
         {/* Left Column: Image */}
         <div className="product-image-column">
@@ -67,7 +101,7 @@ export default async function ProductPage({ params }) {
           {/* Product Guarantee Badges Bar */}
           <div className="product-trust-badges">
             <div className="trust-badge-item">
-              <span>🚚 Express Same Day Mumbai</span>
+              <span>🚚 Express Delivery Gurugram</span>
             </div>
             <div className="trust-badge-item">
               <span>💎 100% Authentic Guaranteed</span>
@@ -125,7 +159,7 @@ export default async function ProductPage({ params }) {
           <details className="product-accordion">
             <summary>Shipping Policy <span className="accordion-icon">+</span></summary>
             <div className="accordion-content">
-              <p>Orders are processed within 24 hours. We offer fast shipping across Mumbai and standard shipping to other major cities.</p>
+              <p>Orders are processed within 24 hours. We offer fast express shipping across Gurugram (Gurgaon) and standard shipping to other major cities.</p>
             </div>
           </details>
           

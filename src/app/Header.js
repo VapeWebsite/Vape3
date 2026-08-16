@@ -29,7 +29,7 @@ function NavigationLinks({ handleNavLinkClick }) {
       <Link href="/shop?category=IGET+VAPE" className={isLinkActive('/shop', 'IGET VAPE') ? 'active' : ''} onClick={handleNavLinkClick}>IGET VAPE</Link>
       <Link href="/shop?category=NIC+SALTS+VAPE" className={isLinkActive('/shop', 'NIC SALTS VAPE') ? 'active' : ''} onClick={handleNavLinkClick}>NIC SALTS</Link>
       <Link href="/shop?category=TERRA" className={isLinkActive('/shop', 'TERRA') ? 'active' : ''} onClick={handleNavLinkClick}>TERRA</Link>
-      <Link href="#" className={isLinkActive('#', null) ? 'active' : ''} onClick={handleNavLinkClick}>ABOUT US</Link>
+      <Link href="/about" className={isLinkActive('/about', null) ? 'active' : ''} onClick={handleNavLinkClick}>ABOUT US</Link>
     </nav>
   );
 }
@@ -65,7 +65,7 @@ export default function Header() {
   // Build structured WhatsApp message for cart items
   const generateWhatsAppCartLink = () => {
     if (cart.length === 0) return '#';
-    let message = `*NEW CART ORDER - Vape Shop Mumbai*\n----------------------------------------\n\n`;
+    let message = `*NEW CART ORDER - Vape Shop Gurugram*\n----------------------------------------\n\n`;
     cart.forEach((item, index) => {
       message += `${index + 1}. *${item.title}*\n   - Quantity: ${item.quantity}\n   - Price: ${item.price}\n\n`;
     });
@@ -88,7 +88,7 @@ export default function Header() {
           
           <div className="logo">
             <Link href="/" onClick={handleNavLinkClick}>
-              <img src="/assets/img_1.jpg" alt="Vape Shop Mumbai Logo" />
+              <img src="/assets/img_1.jpg" alt="Vape Shop Gurugram Logo" />
             </Link>
           </div>
           

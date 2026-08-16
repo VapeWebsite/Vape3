@@ -6,7 +6,7 @@ export default function ProductActions({ product }) {
   const { addToCart } = useCart();
 
   const generateSingleProductWhatsAppLink = () => {
-    const message = `*NEW ORDER - Vape Shop Mumbai*\n----------------------------------------\n*Product:* ${product.title}\n*Price:* ${product.price}\n----------------------------------------\n\nPlease confirm availability and delivery details. Thank you!`;
+    const message = `*NEW ORDER - Vape Shop Gurugram*\n----------------------------------------\n*Product:* ${product.title}\n*Price:* ${product.price}\n----------------------------------------\n\nPlease confirm availability and delivery details. Thank you!`;
     return `https://wa.me/919394309383?text=${encodeURIComponent(message)}`;
   };
 

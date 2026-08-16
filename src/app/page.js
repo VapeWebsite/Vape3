@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { products } from '../data/products';
 
 export const metadata = {
-  title: "Vape Shop Mumbai | #1 Store for Premium Disposable Vapes & Pods",
-  description: "Welcome to Vape Shop Mumbai. We offer the best disposable vapes, e-liquids, and nic salts with same-day delivery across Mumbai. Shop top brands like Elf Bar, IGET, and Terra.",
+  title: "Vape Shop Gurugram | #1 Store for Premium Disposable Vapes & Pods Gurgaon",
+  description: "Welcome to Vape Shop Gurugram. We offer the best disposable vapes, e-liquids, and nic salts with fast delivery across Gurugram (Gurgaon). Shop top brands like Elf Bar, IGET, and Terra.",
 };
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
           </Link>
           <div style={{ padding: '0 15px 15px' }}>
             <a 
-              href={`https://wa.me/919394309383?text=${encodeURIComponent(`*NEW ORDER - Vape Shop Mumbai*\n----------------------------------------\n*Product:* ${product.title}\n*Price:* ${product.price}\n----------------------------------------\n\nPlease confirm availability and delivery details. Thank you!`)}`} 
+              href={`https://wa.me/919394309383?text=${encodeURIComponent(`*NEW ORDER - Vape Shop Gurugram*\n----------------------------------------\n*Product:* ${product.title}\n*Price:* ${product.price}\n----------------------------------------\n\nPlease confirm availability and delivery details. Thank you!`)}`} 
               target="_blank" 
               rel="noreferrer" 
               className="whatsapp-buy-btn"
@@ -60,7 +60,7 @@ export default function Home() {
             <span className="marquee-item">◆</span>
             <span className="marquee-item">FAST SHIPPING 🚀</span>
             <span className="marquee-item">◆</span>
-            <span className="marquee-item">TRUSTED IN MUMBAI 📍</span>
+            <span className="marquee-item">TRUSTED IN GURUGRAM 📍</span>
             <span className="marquee-item">◆</span>
             {/* Duplicates for infinite scroll */}
             <span className="marquee-item">DISPOSABLE VAPES 🛒</span>
@@ -69,7 +69,7 @@ export default function Home() {
             <span className="marquee-item">◆</span>
             <span className="marquee-item">FAST SHIPPING 🚀</span>
             <span className="marquee-item">◆</span>
-            <span className="marquee-item">TRUSTED IN MUMBAI 📍</span>
+            <span className="marquee-item">TRUSTED IN GURUGRAM 📍</span>
             <span className="marquee-item">◆</span>
             <span className="marquee-item">DISPOSABLE VAPES 🛒</span>
             <span className="marquee-item">◆</span>
@@ -77,7 +77,7 @@ export default function Home() {
             <span className="marquee-item">◆</span>
             <span className="marquee-item">FAST SHIPPING 🚀</span>
             <span className="marquee-item">◆</span>
-            <span className="marquee-item">TRUSTED IN MUMBAI 📍</span>
+            <span className="marquee-item">TRUSTED IN GURUGRAM 📍</span>
             <span className="marquee-item">◆</span>
           </div>
         </div>
@@ -188,13 +188,13 @@ export default function Home() {
           <div className="info-card-container">
             <div className="section-header-wrap">
               <span className="section-badge-pill">ABOUT OUR STORE</span>
-              <h2 className="info-heading">Vape Shop Mumbai – Premium Disposable Vapes, Nic Salts & Vape Devices</h2>
+              <h2 className="info-heading">Vape Shop Gurugram – Premium Disposable Vapes, Nic Salts & Vape Devices</h2>
             </div>
-            <p className="info-text">Welcome to Vape Shop Mumbai, your trusted destination for premium vaping products in Mumbai. We offer an extensive collection of disposable vapes, pod systems, e-liquids, nic salts, and vape accessories from leading international brands. Whether you are a beginner or an experienced vaper, our store provides high-quality products to suit every preference.</p>
+            <p className="info-text">Welcome to Vape Shop Gurugram (Gurgaon), your trusted destination for premium vaping products in Haryana. We offer an extensive collection of disposable vapes, pod systems, e-liquids, nic salts, and vape accessories from leading international brands. Whether you are a beginner or an experienced vaper, our store provides high-quality products to suit every preference.</p>
 
             <div className="section-header-wrap" style={{ marginTop: '40px' }}>
               <span className="section-badge-pill">OUR ADVANTAGES</span>
-              <h3 className="info-heading-sub">Why Choose Vape Shop Mumbai?</h3>
+              <h3 className="info-heading-sub">Why Choose Vape Shop Gurugram?</h3>
             </div>
             
             <ul className="info-list">
@@ -204,7 +204,7 @@ export default function Home() {
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                 </div>
-                <span>Premium and authentic vape products.</span>
+                <span>Premium and 100% authentic vape products.</span>
               </li>
               <li>
                 <div className="info-icon-badge">
@@ -236,7 +236,7 @@ export default function Home() {
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                 </div>
-                <span>Fast and secure delivery across Mumbai.</span>
+                <span>Fast and secure express delivery across Gurugram (Gurgaon).</span>
               </li>
               <li>
                 <div className="info-icon-badge">
